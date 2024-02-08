@@ -1,9 +1,9 @@
-# Group 6 project 
-#Django e-commerce website
+# ShopStop 
+
 
 ## Table of Contents
 
-- [Django Ecommerce](#django-ecommerce)
+- [Shopstop](#shopstop)
   - [Table of Contents](#table-of-contents)
   - [Description](#description)
   - [Installation](#installation)
@@ -14,7 +14,7 @@
 
 ## Description
 
-Django Ecommerce is a simple and elegant online store built with Python and Django. It allows users to browse, search, and purchase products, as well as manage their orders and profile. It also features a user-friendly admin panel for managing products, categories, and orders.
+Shopstop is your onestop online store built with Python and Django. It allows users to browse, search, and purchase products, as well as manage their orders and profile. It also features a user-friendly admin panel for managing products, categories, and orders.Businesses can create accounts for business to business and business to client interactions
 
 ## Installation
 First, clone this repository:
