@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
 from .forms import UserCreationForm, LoginForm
 
-#login page
 # login page
 def user_login(request):
     if request.method == 'POST':

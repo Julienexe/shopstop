@@ -1,5 +1,9 @@
 from django.contrib.auth import get_user_model
-from django.test import TestCase
+from django.test import TestCase, RequestFactory, override_settings
+from django.urls  import reverse
+
+from .views import user_login
+from .forms import LoginForm
 
 
 class UsersManagersTests(TestCase):
@@ -40,3 +44,16 @@ class UsersManagersTests(TestCase):
         with self.assertRaises(ValueError):
             User.objects.create_superuser(
                 email="super@user.com", password="foo", is_superuser=False)
+    
+class  SignUpViewTest(TestCase):
+    """ Tests for signup view"""
+    def setUp(self):
+        self.view = user_login
+        self.factory = RequestFactory()
+
+    @override_settings(ACCOUNT_SIGNUP_FORM_CLASS=LoginForm)
+    def test_signup_with_valid_data(self):
+        request = self.factory.post(reverse('users:user_login'), data={'email':'john', 'password1': 'abcdefghijklmnopqrst'})
+        #request = self.factory.post('', data={'username':'john', 'password1': 'abcdefghijklmnopqrst'})
+        response = self.view(request)
+        
