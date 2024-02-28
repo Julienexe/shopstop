@@ -5,6 +5,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 
+
 def service_management(request):
     template = loader.get_template('services.html')
     return HttpResponse(template.render())
