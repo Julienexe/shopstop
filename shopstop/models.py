@@ -1,9 +1,6 @@
 from django.db import models
 
-# Create your models here.
-from django.db import models
 
-# Create your models here.
 class Business(models.Model):   #List of businesses
     name = models.CharField(max_length=255)
     contact_details = models.CharField(max_length=255)
@@ -18,7 +15,7 @@ class Business(models.Model):   #List of businesses
         return f'{self.name}'
 
 class Item(models.Model):     #items on the menu list with their corresponding prices
-    business = models.ForeignKey(List_of_businesses, on_delete=models.CASCADE)
+    business = models.ForeignKey(Business, on_delete=models.CASCADE)
     item_name = models.CharField(max_length=255)
     price = models.IntegerField()
     date_added = models.DateTimeField(auto_now_add = True)
@@ -29,7 +26,7 @@ class Item(models.Model):     #items on the menu list with their corresponding p
     
     
 class Service(models.Model):
-    business = models.ForeignKey(List_of_businesses, on_delete=models.CASCADE)
+    business = models.ForeignKey(Business, on_delete=models.CASCADE)
     service_name = models.CharField(max_length=255)
     price = models.IntegerField()
     date_added = models.DateTimeField(auto_now_add = True)
@@ -39,7 +36,7 @@ class Service(models.Model):
         return f' {self.service_name}'
     
 class Business_photos_videos(models.Model):
-    business = models.ForeignKey(List_of_businesses, on_delete=models.CASCADE)
+    business = models.ForeignKey(Business, on_delete=models.CASCADE)
     photos = models.ImageField(upload_to='photos/', blank = True) 
     videos = models.FileField(upload_to='videos/', blank = True) 
 
