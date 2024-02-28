@@ -1,6 +1,12 @@
 from django.db import models
 
 # Create your models here.
+<<<<<<< HEAD
+=======
+from django.db import models
+
+# Create your models here.
+>>>>>>> e4ad94230666d002f4690cd9ab1ccb4dd8ede7c1
 class List_of_businesses(models.Model):   #List of businesses
     name = models.CharField(max_length=255)
     contact_details = models.CharField(max_length=255)
