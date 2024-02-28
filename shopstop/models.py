@@ -4,30 +4,35 @@ from django.db import models
 from django.db import models
 
 # Create your models here.
-class List_of_businesses(models.Model):   #List of businesses
+class Business(models.Model):   #List of businesses
     name = models.CharField(max_length=255)
     contact_details = models.CharField(max_length=255)
     location = models.CharField(max_length=255)
     description = models.CharField(max_length = 500)
     logo = models.ImageField(upload_to='logos/', null=True, blank=True)
 
+    class Meta:
+        verbose_name_plural = 'Businesses'
+
     def __str__(self):
         return f'{self.name}'
 
-class Menu(models.Model):     #items on the menu list with their corresponding prices
+class Item(models.Model):     #items on the menu list with their corresponding prices
     business = models.ForeignKey(List_of_businesses, on_delete=models.CASCADE)
     item_name = models.CharField(max_length=255)
     price = models.IntegerField()
+    date_added = models.DateTimeField(auto_now_add = True)
     availability = models.BooleanField(default=True)
 
     def __str__(self):
         return f'{ self.item_name}'
     
     
-class Service_management(models.Model):
+class Service(models.Model):
     business = models.ForeignKey(List_of_businesses, on_delete=models.CASCADE)
     service_name = models.CharField(max_length=255)
     price = models.IntegerField()
+    date_added = models.DateTimeField(auto_now_add = True)
     availability = models.BooleanField(default=True)
 
     def __str__(self):
