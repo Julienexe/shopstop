@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <form action="{% url 'users:user_login' %}">
-        {{form}} {% csrf_token%}
-        <div class="btn" type="submit">
-            Submit
-        </div>
-    </form>
-</body>
-
-</html>
+{% extends 'shop/base.html' %}
+{% load bootstrap5 %}
+{% block content %}
+    <div class="container border border-round bg-light" >
+        <form action="{% url 'users:user_login' %}">
+            {% bootstrap_form form %} {% csrf_token%}
+            <div class="btn btn-primary" type="submit">
+                Submit
+            </div>
+        </form>
+    </div>
+    
+{% endblock %}

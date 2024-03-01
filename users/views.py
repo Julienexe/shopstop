@@ -15,7 +15,7 @@ def user_login(request):
                 #return redirect('home')
     else:
         form = LoginForm()
-    #return render(request, 'login.html', {'form': form})
+    return render(request, 'users/login.html', {'form': form})
 
 def  signup(request):
     if request.method=='POST':
