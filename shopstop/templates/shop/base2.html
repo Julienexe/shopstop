@@ -1,0 +1,22 @@
+{% load bootstrap5 %}
+{% load static %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - galaxy</title>
+  <link rel="stylesheet" href="{% static 'css/style.css'%}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+{% block content %}
+{% endblock %}
+
+<!-- partial -->
+  <script  src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
