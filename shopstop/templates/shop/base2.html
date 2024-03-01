@@ -8,10 +8,12 @@
   <meta charset="UTF-8">
   <title>CodePen - galaxy</title>
   <link rel="stylesheet" href="{% static 'css/style.css'%}">
+  <link rel="stylesheet" href="{% static 'css/nav-style.css'%}">
 
 </head>
 <body>
 <!-- partial:index.partial.html -->
+{% include 'shop/base/navbar.html' %}
 {% block content %}
 {% endblock %}
 
