@@ -3,5 +3,3 @@ db.sqlite3
 media/
 shopstop/migrations/
 users/migrations/
-
-
