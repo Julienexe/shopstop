@@ -2,17 +2,26 @@
     <nav>
         <ul>
           <li>
-            <a href="#">Home</a>
+            <a href="{% url 'shop:home' %}">Home</a>
           </li>
           <li>
-            <a href="#">About</a>
+            <a href="#">Market Place</a>
           </li>
           <li>
             <a href="#">Services</a>
           </li>
+          {% if user.is_authenticated%}
           <li>
-            <a href="#">Contact</a>
+            <a href="{% url 'users:log_out' %}">Log out</a>
           </li>
+          {% else %}
+          <li>
+            <a href="{% url 'users:user_login' %}">Login</a>
+          </li>
+          <li>
+            <a href="{% url 'users:signup' %}">Sign Up</a>
+          </li>
+          {% endif %}
         </ul>
       </nav>
 </div>
