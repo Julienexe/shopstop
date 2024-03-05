@@ -1,13 +1,11 @@
-{% extends 'shop/base.html' %}
-{% load bootstrap5 %}
-{% block content %}
-    <div class="container border border-round bg-light" >
-        <form action="{% url 'users:user_login' %}">
-            {% bootstrap_form form %} {% csrf_token%}
-            <div class="btn btn-primary" type="submit">
-                Submit
-            </div>
-        </form>
-    </div>
-    
+{% extends 'shop/base.html' %} {% load bootstrap5 %} {% block content %}
+<div class="container border border-round bg-light">
+    <form action="{% url 'users:user_login' %}">
+        {% bootstrap_form form %} {% csrf_token%}
+        <div class="btn btn-success" type="submit">
+            Login
+        </div>
+    </form>
+</div>
+
 {% endblock %}
