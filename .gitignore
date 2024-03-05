@@ -1,5 +1,6 @@
 db.sqlite3
 *.pyc
 media/
-shopstop/migrations
+shopstop/migrations/
 users/migrations/
+home/migrations/
