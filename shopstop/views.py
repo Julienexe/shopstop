@@ -1,8 +1,6 @@
 from django.shortcuts import render
-
 from django.http import HttpResponse
 from django.template import loader
-
 from .models import Service, Item, Business
 
 
@@ -13,6 +11,7 @@ def business_management(request, business_id):
     context = {"services":services, "items":items,"business":business}
 
     # return render(request,'shop/business-admin.html', context)
+    
 
 def home(request):
     return render(request,'shop/index.html')
