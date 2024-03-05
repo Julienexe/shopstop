@@ -1,24 +1,8 @@
-{% load bootstrap5 %}
-{% load static %}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>ShopStop galaxy</title>
-  <link rel="stylesheet" href="{% static 'css/style.css'%}">
-  <link rel="stylesheet" href="{% static 'css/nav-style.css'%}">
+{% extends 'shop/base.html' %}
 
-</head>
-<body>
-<!-- partial:index.partial.html -->
-{% include 'shop/base/navbar.html' %}
-{% block content %}
+{# base page for all pages that need a footer, navbar #}
+{% block base_content %}
+  {% include 'shop/base/navbar.html' %}
+  {% block content %}
+  {% endblock %}
 {% endblock %}
-
-<!-- partial -->
-  <script  src="{% static 'js/script.js' %}"></script>
-
-</body>
-</html>
