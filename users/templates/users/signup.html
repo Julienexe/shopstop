@@ -2,13 +2,13 @@
 {% load static %}
 {% load bootstrap5 %}
     {% block base_content %}
-    <div class="registration">
-        <form class="registration" action="{% url 'users:signup' %}" method="POST">
+    <div class="auth">
+        <form class="auth" action="{% url 'users:signup' %}" method="POST">
             
             <h3>Signup Here</h3>
             {% csrf_token %}
             {% bootstrap_form form layout='vertical' %}
-            <button class="registration" type="submit">Signup</button>
+            <button class="auth" type="submit">Signup</button>
             
             <a href="{% url 'users:user_login' %}" >Already have an account?</a>
         </form>
