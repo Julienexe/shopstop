@@ -26,11 +26,11 @@ def  signup(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(email=email, password=raw_password)
             login(request,user)
-            #return redirect ('home')
+            return redirect ('shop:home')
     else:
        form = CustomUserCreationForm()     
-    #return render(request,'signup.html',{'form':form})  
+    return render(request,'users/signup.html', {'form':form})  
 
 def log_out(request):
     logout(request)
-    redirect('shop:home')
+    return redirect('shop:home')
