@@ -96,3 +96,9 @@ button.registration{
     border-radius: 5px;
     cursor: pointer;
     }
+button.registration:hover{
+
+    transition: all .3s ease-in-out; 
+    background-color: #0d942f;
+    color: #ffffff;
+}
