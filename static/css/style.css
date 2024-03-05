@@ -34,11 +34,11 @@ body
     color: inherit;
 }
 
-.registration{
+.auth{
     background-color: #000;
 }
 
-form.registration{
+form.auth{
     height: 600px;
     width: 450px;
     background-color: rgba(255,255,255,0.13);
@@ -85,7 +85,7 @@ input{
 ::placeholder{
     color: #e5e5e5;
 }
-button.registration{
+button.auth{
     margin-top: 14px;
     width: 100%;
     background-color: #ffffff;
@@ -96,7 +96,7 @@ button.registration{
     border-radius: 5px;
     cursor: pointer;
     }
-button.registration:hover{
+button.auth:hover{
 
     transition: all .3s ease-in-out; 
     background-color: #0d942f;
