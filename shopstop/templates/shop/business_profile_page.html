@@ -4,10 +4,78 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Business Profile</title>
-  <link rel="stylesheet" href="styles.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0px;
+    background-color: #f7f7f7; /* Set a light background color */
+    color: #333; /* Set text color */
+    border-radius: 20px; /* Rounded corners for the body */
+    overflow-y: auto; /* Enable vertical scrolling when needed */
+  }
+  header {
+    background-color: #033;
+    color: #0ff;
+    padding: 20px;
+    text-align: center;
+  }
+
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  nav ul li a {
+    color: #fff;
+    text-decoration: underline;
+  }
+  section {
+    padding: 20px;
+  }
+  footer {
+    background-color: #033;
+    color: #fff;
+    padding: 10px 0; /* Adjust padding to reduce footer size */
+    text-align: center;
+    position: fixed;
+    margin:0;
+    bottom: 0;
+    width: 100%;
+  }
+  .testimonial p {
+    font-style: italic;
+    color: #666;
+  }
+  #testimonials {
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  #contact {
+      color: #fff;
+      text-align: center;
+  }
+
+  #contact ul {
+      list-style-type: none;
+  }
+  .content-box {
+    background-color: #fff; /* Set background color */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+    padding: 20px; /* Add padding for spacing */
+    margin: 20px; /* Add margin for spacing */
+  }
+  .container {
+    border-radius: 20px; /* Rounded corners */
+    background-color: #fff; /* Set background color */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+    padding: 20px; /* Add padding for spacing */
+    margin: 20px; /* Add margin for spacing */
+  }
+</style>
 </head>
 <body>
-  <header>
+  <header>  
     <h1>Shopstop</h1>
     <nav>
       <ul>
@@ -18,12 +86,34 @@
       </ul>
     </nav>
   </header>
-  <section class="about">
+  <div class="content-box">
     <h2>About Us</h2>
-    <p>Welcome to Shopstop! We specialize in providing high-quality products at affordable prices. Our mission is to make online shopping easy and enjoyable for our customers.</p>
+    <p>Welcome to Shopstop! We specialize in providing high-quality products at affordable prices and excellent customer service. Our mission is to make online shopping easy and enjoyable for our customers.</p>
     <p>With a wide range of products to choose from and excellent customer service, we strive to exceed your expectations with every purchase.</p>
+  </div>
+    <h2>Some of the businesses we partner with</h2>
+    <ul>
+      <li>Shoe companys</li>
+      <li>Cake baking</li>
+      <li>Car accessories</li>
+    </ul>
+
+  <section id="testimonials">
+    <h2>Customer Testimonials</h2>
+    <div class="testimonial">
+      <p>"Company Name's products have greatly improved our business operations. Highly recommended!" - John Doe, CEO</p>
+    </div>
   </section>
+  <div>
   <footer>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>For inquiries or partnership opportunities, please contact us at:</p>
+      <ul>
+        <li>Email: info@companyname.com</li>
+        <li>Phone: 123-456-7890</li>
+      </ul>
+  </section>
     <p>&copy; 2024 Shopstore. All rights reserved.</p>
   </footer>
 </body>
