@@ -16,6 +16,9 @@ def business_management(request, business_id):
 def home(request):
     return render(request,'shop/index.html')
 
+def about(request):
+    return render(request,'shop/about_us.html')
+
 def service_management(request):
     template = loader.get_template('services.html')
     return HttpResponse(template.render())
