@@ -1,51 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About us</title>
-</head>
-<body>
-  <header>  
-    <h1>Shopstop</h1>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  <div class="content-box">
-    <h2>About Us</h2>
-    <p>Welcome to Shopstop! We specialize in providing high-quality products at affordable prices and excellent customer service. Our mission is to make online shopping easy and enjoyable for our customers.</p>
-    <p>With a wide range of products to choose from and excellent customer service, we strive to exceed your expectations with every purchase.</p>
-  </div>
-    <h2>Some of the businesses we partner with</h2>
-    <ul>
-      <li>Shoe companys</li>
-      <li>Cake baking</li>
-      <li>Car accessories</li>
-    </ul>
+{% extends 'shop/base2.html' %}
 
-  <section id="testimonials">
-    <h2>Customer Testimonials</h2>
-    <div class="testimonial">
-      <p>"Company Name's products have greatly improved our business operations. Highly recommended!" - John Doe, CEO</p>
+  <style>
+   
+
+    section {
+      padding: 20px;
+    }
+    footer {
+      background-color: #033;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+      margin: 20px 0;
+    }
+    .testimonial p {
+      font-style: italic;
+      color: #666;
+    }
+    #testimonials {
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+    #contact {
+        color: #fff;
+        text-align: center;
+    }
+  
+    #contact ul {
+        list-style-type: none;
+    }
+    .content-box {
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 20px;
+    }
+  </style>
+  {% block content %}
+  <div class = "about">
+    <div class="content-box">
+      <h2>About Us</h2>
+      <p>Welcome to Shopstop! We specialize in providing high-quality products at affordable prices and excellent customer service. Our mission is to make online shopping easy and enjoyable for our customers.</p>
+      <p>With a wide range of products to choose from and excellent customer service, we strive to exceed your expectations with every purchase.</p>
     </div>
-  </section>
-  <div>
-  <footer>
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p>For inquiries or partnership opportunities, please contact us at:</p>
+      <h2>Some of the businesses we partner with</h2>
       <ul>
-        <li>Email: info@companyname.com</li>
-        <li>Phone: 123-456-7890</li>
+        <li>Shoe companys</li>
+        <li>Cake baking</li>
+        <li>Car accessories</li>
       </ul>
-  </section>
-    <p>&copy; 2024 Shopstore. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+
+    <section id="testimonials">
+      <h2>Customer Testimonials</h2>
+      <div class="testimonial">
+        <p>"Company Name's products have greatly improved our business operations. Highly recommended!" - John Doe, CEO</p>
+      </div>
+    </section>
+  </div>
+  {%endblock%}
+
