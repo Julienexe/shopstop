@@ -12,7 +12,7 @@ def user_login(request):
             user = authenticate(request, email=email, password=password)
             if user:
                 login(request, user)    
-                #return redirect('home')
+                return redirect ('shop:home')
     else:
         form = LoginForm()
     return render(request, 'users/login.html', {'form': form})
