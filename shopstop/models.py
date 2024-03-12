@@ -1,7 +1,6 @@
 from django.db import models
 
-
-class Business(models.Model):   #List of businesses
+class Business(models.Model):   #List of businesses registered
     name = models.CharField(max_length=255)
     contact_details = models.CharField(max_length=255)
     location = models.CharField(max_length=255)
@@ -25,7 +24,7 @@ class Item(models.Model):     #items on the menu list with their corresponding p
         return f'{ self.item_name}'
     
     
-class Service(models.Model):
+class Service(models.Model):  #services provided by certain businesses
     business = models.ForeignKey(Business, on_delete=models.CASCADE)
     service_name = models.CharField(max_length=255)
     price = models.IntegerField()
@@ -34,8 +33,9 @@ class Service(models.Model):
 
     def __str__(self):
         return f' {self.service_name}'
+        
     
-class Business_photos_videos(models.Model):
+class Business_photos_videos(models.Model):  #Businesses can upload their photos and videos
     business = models.ForeignKey(Business, on_delete=models.CASCADE)
     photos = models.ImageField(upload_to='photos/', blank = True) 
     videos = models.FileField(upload_to='videos/', blank = True) 
