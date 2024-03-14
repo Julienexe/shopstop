@@ -5,11 +5,21 @@
  <h1>Businesses include:</h1>
  <ul>
     {% for business in Businesses %}
-    <li>{{business.name}}</li>
-    <ul>
-     <li>Services include:</li>
+     <li>{{business.name}}</li>
      <ul>
+      <li>Services include:</li>
+      <ul>
          {% for service in Business.services.all %}
             <li>{{ service.name }}</li>
          {% endfor %}   
-     </ul> 
+       </ul> 
+       <li>Items include:</li>
+       <ul>
+            {% for item in business.Items.all %}
+              <li>{{ item.name }} - {{ item.price }}</li>
+            {% endfor %}  
+        </ul>
+       </ul>
+    {% endfor %}   
+ </ul>
+{%endblock%}
