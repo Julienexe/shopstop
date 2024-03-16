@@ -12,6 +12,8 @@ def business_management(request, business_id):
 
     # return render(request,'shop/business-admin.html', context)
     
+def shop(request):
+        return render(request, "shop/home.html")
 
 def home(request):
     return render(request, 'shop/index.html')
@@ -24,7 +26,8 @@ def service_management(request):
     return HttpResponse(template.render())
 
 def menu_management(request):
-    template = loader.get_template('menu.html')
+    template = loader.get_template('shop/menu.html')
+    context = {'list':[1,2,3,4]}
     return HttpResponse(template.render())
 
 def business_register(request):
