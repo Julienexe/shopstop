@@ -345,19 +345,23 @@ a {
   transition: all .2s;
  }
  
- .cardi2:hover {
+ .cardi2:hover{
   transform: scale(0.98);
-  border-radius: 19px;
+  border-radius: 18px;
+  
+ }
+ .cardi2:hover .cardi-title{
+  transform: scale(0.97);
+  border-radius: 3px;
+  
  }
  
  .cardi:hover {
-  box-shadow: 0px 0px 30px 1px rgba(255, 230, 0, 0.3);
+  box-shadow: 0px 0px 30px 1px rgba(30, 255, 0, 0.42);
  }
  
 
-.cardi-title {
-  border-radius: 20px;
-}
+
 
 
 .navbar-brand .title{
