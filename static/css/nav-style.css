@@ -99,6 +99,11 @@ nav.before .active-element {
   transform: rotateY(180deg);
 }
 
+nav a, a:visited{
+  color: #fff;
+  text-decoration: none;
+}
+
 html {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
