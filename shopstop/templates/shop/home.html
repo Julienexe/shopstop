@@ -33,15 +33,29 @@
     </div>
     <section id="billboard">
       
+      
       <div class="container">
         <div class="display-3 text-light">
           Products
         </div>
         
+        <div class="d-flex flex-row justify-content-evenly">
+        {% for item in items %}
         <div class="cardi ">
           <div class="cardi2">
+            <div class="cardi-title  bg-light p-3">
+              {{item.business}} <br>
+              {{item.item_name}}
+            </div>
+            <div class="card-body">
+              
+              <img  height="200px" width="150px" src="{{item.photos.url}}" alt="null">
+
+            </div>
           
           </div>
+        </div>
+        {% endfor %}
         </div>
       </div>
       
@@ -53,15 +67,23 @@
           Services
         </div>
         
+        <div class="d-flex flex-row justify-content-evenly">
+        {% for service in services %}
         <div class="cardi ">
           <div class="cardi2 p-1 ">
             <div class="cardi-title  bg-light p-3">
-              Business
+              {{service.business}}
             </div>
+            <div class="card-body text-light">
+              Service name: {{service.service_name}} <br>
+              Price : ${{service.price}}
             </div>
         
           </div>
         </div>
+        {% endfor  %}
+        </div>
+      </div>
     </section>
     
     
