@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
-from .forms import CustomUserCreationForm, LoginForm
+from .forms import CustomUserCreationForm, LoginForm, ProfileForm
 
 # login page
 def user_login(request):
@@ -34,3 +34,7 @@ def  signup(request):
 def log_out(request):
     logout(request)
     return redirect('shop:home')
+
+def profileform(request):
+    form = ProfileForm()
+    return render(request,'users/profile.html',{'form':form})

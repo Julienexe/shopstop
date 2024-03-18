@@ -13,7 +13,10 @@ def business_management(request, business_id):
     # return render(request,'shop/business-admin.html', context)
     
 def shop(request):
-        return render(request, "shop/home.html")
+        items = Item.objects.all()
+        services = Service.objects.all()
+        context = {'items':items,'services':services}
+        return render(request, "shop/home.html", context)
 
 def home(request):
     return render(request, 'shop/index.html')
