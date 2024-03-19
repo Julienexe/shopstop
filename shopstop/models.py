@@ -28,6 +28,7 @@ class Service(models.Model):  #services provided by certain businesses
     business = models.ForeignKey(Business, on_delete=models.CASCADE)
     service_name = models.CharField(max_length=255)
     price = models.IntegerField()
+    picture = models.ImageField(upload_to='services/', blank = True)
     date_added = models.DateTimeField(auto_now_add = True)
     availability = models.BooleanField(default=True)
 
