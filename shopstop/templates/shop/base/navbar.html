@@ -1,22 +1,22 @@
 <div class="navbar">
-  <nav>
+  <nav >
     <ul>
       <li class="active">
-        <button>home</button>
+        <a href="{% url 'shop:home' %}">home</a>
       </li>
       <li>
-        <button>Shop</button>
+        <a href="{% url 'shop:shop' %}">Shop</a>
       </li>
       {% if user.is_authenticated %}
       <li>
-        <button>Logout</button>
+        <a href="{% url 'users:logout' %}">Logout</a>
       </li>
       {% else %}
       <li>
-        <button>Login</button>
+        <a href="{% url 'users:user_login' %}">Login</a>
       </li>
       <li>
-        <button>Sign up</button>
+        <a href="{% url 'users:signup' %}">Sign up</a>
       </li>
       {% endif %}
 
