@@ -35,7 +35,7 @@
       
       
       <div class="container">
-        <div class="display-3 text-light">
+        <div class="d-flex display-3 text-light align-items-center justify-content-center">
           Products
         </div>
         
@@ -44,12 +44,11 @@
         <div class="cardi ">
           <div class="cardi2">
             <div class="cardi-title  bg-light p-3">
-              {{item.business}} <br>
               {{item.item_name}}
             </div>
             <div class="card-body">
               
-              <img  height="200px" width="150px" src="{{item.photos.url}}" alt="null">
+              <img  height="150px" width="150px" src="{{item.photos.url}}" alt="null">
 
             </div>
           
@@ -63,7 +62,7 @@
     </section>
     <section id="company-services" class="padding-large">
       <div class="container">
-        <div class="display-3 text-light">
+        <div class="d-flex display-3 text-light align-items-center justify-content-center">
           Services
         </div>
         
@@ -72,10 +71,11 @@
         <div class="cardi ">
           <div class="cardi2 p-1 ">
             <div class="cardi-title  bg-light p-3">
-              {{service.business}}
+              {{service.service_name}}
             </div>
             <div class="card-body text-light">
-              Service name: {{service.service_name}} <br>
+               
+              <img height="170px" width="150px"  src="{{service.picture.url}}" alt="{{service.service_name}}" srcset="">
               Price : ${{service.price}}
             </div>
         
@@ -88,7 +88,7 @@
     
     
     
-    <script src="{% static 'js/modernizr.js' %}"></script>
+    
     <script  src="{% static 'js/script.js' %}"></script>
     <script  src="{% static 'js/nav.js' %}"></script>
     <script src='https://unpkg.co/gsap@3/dist/gsap.min.js'></script>

@@ -1,8 +1,9 @@
-{% extends 'shop/base.html' %} {% load bootstrap5 %} {% block base_content %}
+{% extends 'shop/base.html' %}{% block base_content %}
 
     <form class="auth" style="height: 400px;" action="{% url 'users:user_login' %}" method="POST">
         <h3>Login</h3>
-        {% bootstrap_form form layout='inline'%} {% csrf_token%}
+         {% csrf_token%}
+        {{form}}
         <button class="auth" type="submit">Login</button>
     </form>
     
