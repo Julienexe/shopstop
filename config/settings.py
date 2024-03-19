@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'shopstop',
     'users',
     'bootstrap5',
-    'home'
+
 ]
 
 MIDDLEWARE = [
