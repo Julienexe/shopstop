@@ -1,0 +1,58 @@
+{% extends 'shop/base2.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% block content %}
+<div class="container text-light">
+    <h1>Item Details</h1>
+    <hr />
+    
+    <!-- The method get_absolute_url() returns the URL to access a particular object -->
+   <div class="container-glass">
+        <div class="box">
+          <span class="title text-align-right">{{ item.item_name }}</span><br>
+          <div class="glass-img ">
+            <button type="button" style="border: 0px;" class="w-100 h-100" data-bs-toggle="modal" data-bs-target="#myModal">
+              <img class="img-fluid img-thumbnail h-100" src="{{ item.photos.url }}" alt="{{ item.item_name }}" > 
+          </button>
+          </div>
+          <div class="row">
+            
+                <strong><b>Price:</b> ${{ item.price }}</strong>
+            <p>In Stock</p>
+            <span>VALID</span> <span>01/28</span>
+
+          </div>
+        </div>
+      </div>
+      
+    </div> 
+    
+       
+  
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title text-dark">{{item.name}}</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <img id="modal-image" class="img-fluid" style="transform: scale(.90);" src="{{item.photos.url}}" alt="Image Title">
+        </div>
+  
+       
+  
+      </div>
+    </div>
+  </div>
+  
+{% endblock %}
+<a href="{% url 'item_list' %}" class="btn btn-primary" role="button"><i class="glyphicon glyphicon-chevron-left
+    <a href="{% url 'item_list' %}" class="btn btn-default">Go Back to List</a>  
+    <a href="{% url 'add_to_cart' item.id % }"  
+       class="btn btn-success pull-right add_to_cart">Add to Cart</a>  
