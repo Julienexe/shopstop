@@ -2,5 +2,9 @@ db.sqlite3
 *.pyc
 media/
 shopstop/migrations/
+shopstop/migrations/!__init__.py
 users/migrations/
+users/migrations/!__init__.py
 home/migrations/
+home/migrations/!__init__.py
+
