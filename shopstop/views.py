@@ -10,7 +10,7 @@ def business_management(request, business_id):
     items = business.item_set.order_by("date_added")
     context = {"services":services, "items":items, "business" : business}
 
-    # return render(request,'shop/business-admin.html', context)
+    return render(request,'shop/business-admin.html', context)
     
 def shop(request):
         items = Item.objects.all()
@@ -36,4 +36,8 @@ def menu_management(request):
 def business_register(request):
     template = loader.get_template( 'register.html')
     return HttpResponse(template.render() )
+
+def business_profile(request):
+    template = loader.get_template('business-profile-page')  
+    return HttpResponse(template.render())
 
