@@ -47,8 +47,9 @@
               {{item.item_name}}
             </div>
             <div class="card-body">
-              
-              <img  height="150px" width="150px" src="{{item.photos.url}}" alt="null">
+              <a href="{% url 'shop:prod-detail' item.id%}">
+                <img  height="150px" width="150px" src="{{item.photos.url}}" alt="null">
+              </a>
 
             </div>
           
