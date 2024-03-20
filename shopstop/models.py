@@ -14,7 +14,7 @@ class Business(models.Model):   #List of businesses registered
         return f'{self.name}'
 
 class Item(models.Model):     #items on the menu list with their corresponding prices
-    business = models.ForeignKey(Business, on_delete=models.CASCADE)
+    business = models.ForeignKey(Business, on_delete=models.CASCADE, null=True)
     item_name = models.CharField(max_length=255)
     price = models.IntegerField()
     date_added = models.DateTimeField(auto_now_add = True)
