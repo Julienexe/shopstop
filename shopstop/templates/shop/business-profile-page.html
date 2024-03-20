@@ -1,2 +1,57 @@
 {% extends 'shop/base.html' %}
 {% block content %}
+  <title>Business Profile Page</title>
+<body>
+  <header>
+    <h1>Your Business Profile</h1>
+  </header>
+  <main>
+    <section id="businessInfo">
+      <h2>Business Information</h2>
+      <form id="businessForm">
+        <label for="businessName">Business Name:</label>
+        <input type="text" id="businessName" name="businessName">
+        <label for="businessDescription">Description:</label>
+        <textarea id="businessDescription" name="businessDescription"></textarea>
+        <label for="businessImage">Upload Image:</label>
+        <input type="file" id="businessImage" name="businessImage">
+        <label for="businessAddress">Address:</label>
+        <input type="text" id="businessAddress" name="businessAddress">
+        <label for="businessPhone">Phone Number:</label>
+        <input type="tel" id="businessPhone" name="businessPhone">
+        <label for="businessEmail">Email:</label>
+        <input type="email" id="businessEmail" name="businessEmail">
+        <label for="businessWebsite">Website:</label>
+        <input type="url" id="businessWebsite" name="businessWebsite">
+        <button type="submit">Save Changes</button>
+      </form>
+    </section>
+    <section id="productManagement">
+      <h2>Product Management</h2>
+      <ul id="productList">
+      </ul>
+      <form id="productForm">
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" name="productName">
+        <label for="productDescription">Description:</label>
+        <textarea id="productDescription" name="productDescription"></textarea>
+        <label for="productPrice">Price:</label>
+        <input type="text" id="productPrice" name="productPrice">
+        <label for="productImage">Upload Image:</label>
+        <input type="file" id="productImage" name="productImage">
+        <button type="button" id="addProduct">Add Product</button>
+      </form>
+    </section>
+  </main>
+  <script>
+    document.getElementById('businessForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+    });
+
+    document.getElementById('addProduct').addEventListener('click', function(event) {
+      event.preventDefault();
+    });
+  </script>
+</body>
+</html>
+{%endblock%}
