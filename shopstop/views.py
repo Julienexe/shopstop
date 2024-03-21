@@ -14,10 +14,12 @@ def business_management(request, business_id):
     return render(request,'shop/business-admin.html', context)
 
 def add_item(request):
+    business = Business.objects.get(owner = request.user)
     if request.method == 'POST': # If the form has been submitted...
         form = ItemModelForm(request.POST) # A form bound to the POST data
         if form.is_valid(): # All validation rules pass
             item = form.save()
+            item.business = business
             return redirect('shop:shop')
     else: 
         form = ItemModelForm() # An unbound form
