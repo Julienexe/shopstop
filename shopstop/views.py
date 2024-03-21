@@ -16,10 +16,19 @@ def business_management(request, business_id):
 def add_item(request):
     business = Business.objects.get(owner = request.user)
     if request.method == 'POST': # If the form has been submitted...
-        form = ItemModelForm(request.POST) # A form bound to the POST data
+        form = ItemModelForm(request.POST, request.FILES) # A form bound to the POST data
         if form.is_valid(): # All validation rules pass
-            item = form.save()
-            item.business = business
+            item_name = form.cleaned_data['item_name']
+            price = form.cleaned_data['price']
+            photos = form.cleaned_data['photos']
+
+            item = Item.objects.create(
+                business =  business,
+                item_name = item_name,
+                price = price,
+                photos = photos 
+            )
+            item.save()
             return redirect('shop:shop')
     else: 
         form = ItemModelForm() # An unbound form

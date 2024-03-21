@@ -1,5 +1,5 @@
 {% extends 'shop/base.html' %}{% block base_content %}
-<form class="auth" action="{% url 'shop:add-item' %}" method="POST">
+<form class="auth" enctype="multipart/form-data" action="{% url 'shop:add-item' %}" method="POST">
     {{form}} {% csrf_token %}
     <button class="auth" type="submit">Add</button>
 </form>
