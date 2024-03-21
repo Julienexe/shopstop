@@ -1,6 +1,8 @@
 from django.db import models
+from users.models import CustomUser
 
 class Business(models.Model):   #List of businesses registered
+    owner = models.OneToOneField(CustomUser, on_delete=models.CASCADE,  blank=True, null = True)
     name = models.CharField(max_length=255)
     contact_details = models.CharField(max_length=255)
     location = models.CharField(max_length=255)
