@@ -1,0 +1,24 @@
+{% extends 'shop/base.html' %}
+{% block content %}
+    <title>Business Profile</title>
+<body>
+    <h1>Business Profile</h1>
+    
+    <div>
+        <img src="path/to/profile-pic.jpg" alt="Profile Picture" width="200">
+    </div>
+
+    <div>
+        <p><strong>Name:</strong> Business Name</p>
+        <p><strong>Contact:</strong> 123-456-7890</p>
+        <p><strong>Email:</strong> business@example.com</p>
+        <p><strong>Address:</strong> 123 Main Street, City, Country</p>
+    </div>
+
+    <div>
+        <a href="/edit-profile">
+            <button>Edit Profile</button>
+        </a>
+    </div>
+</body>
+{% endblock content %}
