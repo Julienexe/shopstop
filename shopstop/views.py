@@ -66,6 +66,5 @@ def business_register(request):
     return HttpResponse(template.render() )
 
 def business_profile(request):
-    template = loader.get_template('shop/business-profile-page.html')  
-    return HttpResponse(template.render())
+    return render(request,'shop/business-profile-page.html')
 
