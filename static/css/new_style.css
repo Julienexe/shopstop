@@ -423,6 +423,7 @@ a {
  /*Button*/
  .card2-button {
   border: 1px solid #252525;
+
   display: flex;
   padding: .3em;
   cursor: pointer;
