@@ -68,12 +68,7 @@ def business_register(request):
 def business_profile(request):
     return render(request,'shop/business-profile-page.html')
 
-def cart(request):
-    if request.user.is_authenticated:
-        order, created = Order.objects.get_or_create(customer=request.user, complete = False)
-        items = order.orderitem_set.all()
-    else:    
-        items=[]
-    context = {'items':items}
-    return render(request,"shop/cart/cart.html", context)
+
+
+
 
