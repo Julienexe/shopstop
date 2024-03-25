@@ -257,4 +257,8 @@ button.auth:hover{
     color: aliceblue;
   }
   
-  
+  .cart-row{
+    display: flexbox;
+    justify-content: space-between;
+    flex-direction: row;
+  }
