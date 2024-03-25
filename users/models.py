@@ -5,7 +5,7 @@ from PIL import Image
 
 from .managers import CustomUserManager
 
-
+#the custom user model
 class CustomUser(AbstractUser):
     username = None
     email = models.EmailField(_("email address"), unique=True)
