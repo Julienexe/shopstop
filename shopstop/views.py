@@ -69,7 +69,7 @@ def business_profile(request):
     return render(request,'shop/business-profile-page.html')
 
 def cart(request):
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         order, created = Order.objects.get_or_create(customer=request.user, complete = False)
         items = order.orderitem_set.all()
     else:    
