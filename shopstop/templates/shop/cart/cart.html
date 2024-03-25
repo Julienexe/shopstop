@@ -1,30 +1,60 @@
+{% extends 'shop/base2.html' %}
+{% load bootstrap5 %}
+{% bootstrap_css%}
+{% bootstrap_javascript%}
+{% block content %}
 
-<form id="shopping-cart" action="cart.html" method="post">
-    <table class="shopping-cart">
-        <thead>
-            <tr>
-                <th scope="col">Item</th>
-                <th scope="col">Qty</th>
-                <th scope="col">Price</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-    <p id="sub-total">
-        <strong>Sub Total</strong>: <span id="stotal"></span>
-    </p>
-    <ul id="shopping-cart-actions">
-        <li>
-            <input type="submit" name="update" id="update-cart" class="btn" value="Update Cart" />
-        </li>
-        <li>
-            <input type="submit" name="delete" id="empty-cart" class="btn" value="Empty Cart" />
-        </li>
-        <li>
-            <a href="index.html" class="btn">Continue Shopping</a>
-        </li>
-        <li>
-            <a href="checkout.html" class="btn">Go To Checkout</a>
-        </li>
-    </ul>
-</form>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <hr>
+<div class="container bg-light rounded">
+  <table id="cart" class="table table-hover table-condensed">
+    <thead>
+      <tr>
+        <th style="width:50%">Product</th>
+        <th style="width:10%">Price</th>
+        <th style="width:8%">Quantity</th>
+        <th style="width:22%" class="text-center">Subtotal</th>
+        <th style="width:10%"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        {% for item in items %}
+        <td data-th="Product">
+            
+          <div class="row p-4">
+            <div class="col-sm-2 hidden-xs"><img src="{{item.product.photos.url}}" style="height: 100px; width: 100px;" alt="..." class="img-responsive" /></div>
+            <div class="col-sm-10">
+              <h4 class="nomargin">{{item.product.item_name}}</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+        </td>
+        <td data-th="Price">${{item.product.price}}</td>
+        <td data-th="Quantity">
+          <input type="number" class="form-control text-center" value="1">
+        </td>
+        <td data-th="Subtotal" class="text-center">${{item.get_total}}</td>
+        <td class="actions" data-th="">
+          <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+          <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+    <tfoot>
+      <tr class="visible-xs">
+        <td class="text-center"><strong>Total items {{order.get_cart_items}}</strong></td>
+      </tr>
+      <tr>
+        <td><a href="{% url 'shop:shop' %}" class="py-3" style="color: black; text-decoration: none; background-color: gray;"><button   class="fbtn btn-dark text-light"><i class="fa fa-angle-left"></i> Continue Shopping</button></a></td>
+        <td colspan="2" class="hidden-xs"></td>
+        <td class="hidden-xs text-center"><strong>Total $ {{order.get_cart_total}}</strong></td>
+        <td><a href="{% url 'orders:checkout' %}" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+</div>
+{% endblock %}

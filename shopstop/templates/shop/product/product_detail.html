@@ -9,16 +9,18 @@
     <!-- The method get_absolute_url() returns the URL to access a particular object -->
    <div class="container-glass">
         <div class="box">
-          <span class="title text-align-right">{{ item.item_name }}</span><br>
-          <div class="glass-img ">
+          <span class="food-title title text-align-right">{{ item.item_name }}</span><br>
+          <div class="glass-img">
             <button type="button" style="border: 0px;" class="w-100 h-100" data-bs-toggle="modal" data-bs-target="#myModal">
-              <img class="img-fluid img-thumbnail h-100" src="{{ item.photos.url }}" alt="{{ item.item_name }}" > 
+              <img class="food-img img-fluid img-thumbnail h-100" src="{{ item.photos.url }}" alt="{{ item.item_name }}" > 
           </button>
           </div>
           <div>
+            <!-- cart form -->
             
-                <div class="display-6"><strong><b>Price:</b> ${{ item.price }}</strong></div>
-            <button class="fbtn">Add to cart</button>
+            
+                <div class="food-price display-6"><strong><b>Price:</b> ${{ item.price }}</strong></div>
+            <button data-product="{{item.id}}" data-action="add" class="update-cart fbtn">Add to cart</button>
 
 
           </div>
@@ -52,7 +54,3 @@
   </div>
   
 {% endblock %}
-<a href="{% url 'item_list' %}" class="btn btn-primary" role="button"><i class="glyphicon glyphicon-chevron-left
-    <a href="{% url 'item_list' %}" class="btn btn-default">Go Back to List</a>  
-    <a href="{% url 'add_to_cart' item.id % }"  
-       class="btn btn-success pull-right add_to_cart">Add to Cart</a>  
