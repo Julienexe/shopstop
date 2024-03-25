@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'users',
     'bootstrap5',
     'fontawesomefree',
+    'orders',
 
 ]
 

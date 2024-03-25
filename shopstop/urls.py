@@ -14,5 +14,6 @@ urlpatterns = [
     path('service/manage/', views.service_management, name='service_management'),
     path('manage_business/<business_id>', views.business_management, name = 'management'),
     path('about/', views.about, name='about'),
-    path('business-profile/', views.business_profile, name = 'business-profile')
+    path('business-profile/', views.business_profile, name = 'business-profile'),
+    
 ]
