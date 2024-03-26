@@ -33,12 +33,12 @@ tempor incididunt ut labore et dolore magna aliqua.</p>
         </td>
         <td data-th="Price">${{item.product.price}}</td>
         <td data-th="Quantity">
-          <input type="number" class="form-control text-center" value="1">
+          {{item.quantity}}
         </td>
         <td data-th="Subtotal" class="text-center">${{item.get_total}}</td>
         <td class="actions" data-th="">
-          <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-          <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+          <button data-product="{{item.product.id}}" data-action="add" class="btn btn-info btn-sm update-cart"><i class="fa fa-plus"></i></button>
+          <button data-product="{{item.product.id}}" class="btn btn-danger btn-sm update-cart" data-action="remove"><i class="fa fa-trash-o"></i></button>
         </td>
       </tr>
       {% endfor %}
