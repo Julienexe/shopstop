@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
 from .models import *
-from .forms import ItemModelForm
+from .forms import ItemModelForm, BusinessForm
 
 #views to manage the main app
 def business_management(request, business_id):
@@ -35,7 +35,19 @@ def add_item(request):
     
     return render(request, 'shop/product/add-item.html', {'form': form})
 
-    
+
+def create_business(request):
+    if request.method == 'POST':
+        form = BusinessForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('business-profile/')  # Redirect to a success page or wherever appropriate
+    else:
+        form = BusinessForm()
+    return render(request, 'shop/businesses/business_form.html', {'form': form})    
+
+
+
 def shop(request):
         items = Item.objects.all()
         services = Service.objects.all()
@@ -67,6 +79,7 @@ def business_register(request):
 
 def business_profile(request):
     return render(request,'shop/business-profile-page.html')
+
 
 
 
