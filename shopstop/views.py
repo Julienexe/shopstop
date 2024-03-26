@@ -4,7 +4,7 @@ from django.template import loader
 from .models import *
 from .forms import ItemModelForm
 
-
+#views to manage the main app
 def business_management(request, business_id):
     business = Business.objects.get(id = business_id)
     services = business.service_set.order_by("date_added")

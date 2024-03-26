@@ -5,7 +5,7 @@ from django.urls  import reverse
 from .views import user_login
 from .forms import LoginForm
 
-
+#unit tests for the user model and login form 
 class UsersManagersTests(TestCase):
 
     def test_create_user(self):

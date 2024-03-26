@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from shopstop.models import Order, OrderItem, Item
 from django.http import JsonResponse
-import json
+importitems
 
+
+#views to create cart items
 def cart(request):
     if request.user.is_authenticated:
         order, created = Order.objects.get_or_create(customer=request.user, complete = False)

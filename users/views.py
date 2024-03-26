@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
 from .forms import CustomUserCreationForm, LoginForm, ProfileForm
 
-# login page
+# login page with only email and password 
 def user_login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)

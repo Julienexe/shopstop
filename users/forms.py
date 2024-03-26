@@ -4,7 +4,7 @@ from django import forms
 from django.forms import ModelForm
 from .models import CustomUser, Profile
 
-
+#overriding the default user creation form 
 class CustomUserCreationForm(UserCreationForm):
 
     class Meta:
