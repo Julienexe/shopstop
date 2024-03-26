@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from shopstop.models import Order, OrderItem, Item
 from django.http import JsonResponse
-importitems
+import json
 
 
 #views to create cart items
