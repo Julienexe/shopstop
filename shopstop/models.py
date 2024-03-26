@@ -9,6 +9,9 @@ class Business(models.Model):   #List of businesses registered
     location = models.CharField(max_length=255)
     description = models.CharField(max_length = 500)
     logo = models.ImageField(upload_to='logos/', null=True, blank=True)
+    videos = models.FileField(upload_to='videos/', blank = True) 
+    photos = models.ImageField(upload_to='photos/', blank = True)
+
 
     class Meta:
         verbose_name_plural = 'Businesses'
