@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Create Business</title>
-</head>
-<body>
+{% extends 'shop/base.html' %}
+{% load bootstrap5 %}
+{% block base_content %}
     <h2>Create Business</h2>
-    <form method="post" enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data" class="auth">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
+        {% bootstrap_form form layout='horizontal' %}
+        <button class="auth" type="submit">create business</button>
     </form>
+{% endblock %}
 </body>
 </html>
