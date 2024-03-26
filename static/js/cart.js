@@ -33,6 +33,7 @@ function updateUserOrder(productId, action){
     })
     .then((data) =>{
        console.log('Data from server:', data)
+       location.reload()
        
     })
 }
