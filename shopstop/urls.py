@@ -16,5 +16,7 @@ urlpatterns = [
     path('manage_business/<business_id>', views.business_management, name = 'management'),
     path('about/', views.about, name='about'),
     path('business-profile/', views.business_profile, name = 'business-profile'),
+    #business form
+    path('business_form/', views.create_business, name = 'create_business')
     
 ]
