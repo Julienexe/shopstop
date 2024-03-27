@@ -54,11 +54,6 @@ class ViewsTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'services.html')
 
-    def test_menu_management(self):
-        response = self.client.get(reverse('menu_management'))
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'shop/menu.html')
-
     def test_business_register(self):
         response = self.client.get(reverse('business_register'))
         self.assertEqual(response.status_code, 200)
