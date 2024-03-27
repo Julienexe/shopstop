@@ -6,27 +6,19 @@ from .models import Business, Item, Service
 
 class ViewsTestCase(TestCase):
     def setUp(self):
-        
         self.user = User.objects.create_user(username='testuser', password='testpassword')
-        
-        
         self.business = Business.objects.create(owner=self.user, name='Test Business', description='Test Description')
-
-        
         self.item = Item.objects.create(business=self.business, item_name='Test Item', price=10)
-
-        
         self.service = Service.objects.create(business=self.business, service_name='Test Service', price=20)
 
     def test_business_management(self):
-        # Ensure business management view is accessible
         self.client.login(username='testuser', password='testpassword')
         response = self.client.get(reverse('business_management', args=(self.business.id,)))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'shop/business-admin.html')
 
     def test_add_item(self):
-        # Ensure new item can be added successfully
+        
         self.client.login(username='testuser', password='testpassword')
         response = self.client.post(reverse('add_item'), {'item_name': 'New Test Item', 'price': 15})
         self.assertEqual(response.status_code, 302)  # Should redirect after successful addition
