@@ -26,11 +26,10 @@ class ViewsTestCase(TestCase):
     def test_create_business(self):
         self.client.login(username='testuser', password='testpassword')
         response = self.client.post(reverse('create_business'), {'name': 'New Test Business', 'description': 'New Test Description'})
-        self.assertEqual(response.status_code, 302)  # Should redirect after successful creation
+        self.assertEqual(response.status_code, 302) 
         self.assertTrue(Business.objects.filter(name='New Test Business').exists())
 
     def test_shop(self):
-        # Ensure shop view is accessible
         response = self.client.get(reverse('shop'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'shop/home.html')
@@ -48,31 +47,26 @@ class ViewsTestCase(TestCase):
         self.assertTemplateUsed(response, 'shop/index.html')
 
     def test_about(self):
-        # Ensure about view is accessible
         response = self.client.get(reverse('about'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'shop/about_us.html')
 
     def test_service_management(self):
-        # Ensure service management view is accessible
         response = self.client.get(reverse('service_management'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'services.html')
 
     def test_menu_management(self):
-        # Ensure menu management view is accessible
         response = self.client.get(reverse('menu_management'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'shop/menu.html')
 
     def test_business_register(self):
-        # Ensure business register view is accessible
         response = self.client.get(reverse('business_register'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'register.html')
 
     def test_business_profile(self):
-        # Ensure business profile view is accessible
         response = self.client.get(reverse('business_profile'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'shop/business-profile-page.html')
