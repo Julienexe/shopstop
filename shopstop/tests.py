@@ -35,13 +35,11 @@ class ViewsTestCase(TestCase):
         self.assertTemplateUsed(response, 'shop/home.html')
 
     def test_product_detail(self):
-        # Ensure product detail view is accessible
         response = self.client.get(reverse('product_detail', args=(self.item.id,)))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'shop/product/product_detail.html')
 
     def test_home(self):
-        # Ensure home view is accessible
         response = self.client.get(reverse('home'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'shop/index.html')
