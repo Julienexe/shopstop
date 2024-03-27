@@ -19,8 +19,7 @@ class CustomUser(AbstractUser):
         return self.email
     
 class Profile(models.Model):
-    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, primary_key=True, blank=True)
-    image = models.ImageField(default='avatar.png',upload_to='profile/', blank=True)  
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, primary_key=True, blank=True) 
     contact = models.CharField( max_length= 50, default = '+256755565556')
     name = models.CharField(max_length = 255, default= 'user')
 
