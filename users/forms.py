@@ -24,7 +24,7 @@ class CustomUserChangeForm(UserChangeForm):
 class ProfileForm(ModelForm):
     class Meta:
         model = Profile
-        fields = ('image','contact','name')
+        fields = ('contact','name')
 
 class LoginForm(forms.Form):
     email = forms.CharField()
