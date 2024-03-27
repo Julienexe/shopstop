@@ -18,14 +18,12 @@ class ViewsTestCase(TestCase):
         self.assertTemplateUsed(response, 'shop/business-admin.html')
 
     def test_add_item(self):
-        
         self.client.login(username='testuser', password='testpassword')
         response = self.client.post(reverse('add_item'), {'item_name': 'New Test Item', 'price': 15})
-        self.assertEqual(response.status_code, 302)  # Should redirect after successful addition
+        self.assertEqual(response.status_code, 302)  
         self.assertTrue(Item.objects.filter(item_name='New Test Item').exists())
 
     def test_create_business(self):
-        # Ensure new business can be created successfully
         self.client.login(username='testuser', password='testpassword')
         response = self.client.post(reverse('create_business'), {'name': 'New Test Business', 'description': 'New Test Description'})
         self.assertEqual(response.status_code, 302)  # Should redirect after successful creation
