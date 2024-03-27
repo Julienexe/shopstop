@@ -41,7 +41,7 @@ def create_business(request):
         form = BusinessForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('business-profile/')  # Redirect to a success page or wherever appropriate
+            return redirect('business-profile/')  
     else:
         form = BusinessForm()
     return render(request, 'shop/businesses/business_form.html', {'form': form})    
