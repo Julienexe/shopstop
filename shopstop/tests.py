@@ -6,16 +6,16 @@ from .models import Business, Item, Service
 
 class ViewsTestCase(TestCase):
     def setUp(self):
-        # Create a test user
+        
         self.user = User.objects.create_user(username='testuser', password='testpassword')
         
-        # Create test business
+        
         self.business = Business.objects.create(owner=self.user, name='Test Business', description='Test Description')
 
-        # Create test item
+        
         self.item = Item.objects.create(business=self.business, item_name='Test Item', price=10)
 
-        # Create test service
+        
         self.service = Service.objects.create(business=self.business, service_name='Test Service', price=20)
 
     def test_business_management(self):
