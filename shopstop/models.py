@@ -23,6 +23,7 @@ class Item(models.Model):     #items on the menu list with their corresponding p
     business = models.ForeignKey(Business, on_delete=models.CASCADE, null=True)
     item_name = models.CharField(max_length=255)
     price = models.IntegerField()
+    description = models.CharField(max_length=1000)
     date_added = models.DateTimeField(auto_now_add = True)
     availability = models.BooleanField(default=True)
     photos = models.ImageField(upload_to='photos/', blank = True)
