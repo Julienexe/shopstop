@@ -63,6 +63,13 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+CORS_ALLOWED_ORIGINS = [
+    'https://shopstop-shopstop.up.railway.app'
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://shopstop-shopstop.up.railway.app'
+]
 
 ROOT_URLCONF = 'config.urls'
 
